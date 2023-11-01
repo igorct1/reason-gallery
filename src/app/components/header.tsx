@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge'
 
 export function Header() {
   return (
-    <header className="flex items-center gap-8 py-4">
+    <header className="mx-auto flex w-full max-w-[1440px] items-center gap-8 p-4">
       <div className="group flex flex-1 items-center gap-4 ">
         <h1 className=" text-2xl font-semibold ">reason.</h1>
         <form

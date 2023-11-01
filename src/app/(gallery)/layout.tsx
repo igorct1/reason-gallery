@@ -7,7 +7,7 @@ interface HomeLayout {
 
 export default function HomeLayout({ children }: HomeLayout) {
   return (
-    <div className="mx-auto min-h-screen w-full max-w-[1440px] px-4">
+    <div className="mx-auto min-h-screen w-full">
       <Header />
       {children}
     </div>
