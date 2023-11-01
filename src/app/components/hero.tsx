@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge'
 
 export async function Hero() {
   return (
-    <div className="bg-hero justify-center  bg-cover bg-fixed bg-center bg-no-repeat px-4 py-36">
+    <div className="bg-hero bg-cover bg-fixed bg-center bg-no-repeat px-4 py-36">
       <div className="mx-auto flex h-full  w-full max-w-[800px] flex-col gap-2 ">
         <h1 className="text-6xl font-semibold">reason</h1>
         <p>
