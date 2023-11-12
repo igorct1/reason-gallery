@@ -15,9 +15,9 @@ export function PhotosList({ user }: PhotosListProps) {
 
   const getPhotos = useCallback(async () => {
     const response = await api(endpoint)
-    const photos = await response.json()
+    const newPhotos = await response.json()
 
-    setPhotos(photos)
+    setPhotos(newPhotos)
   }, [endpoint])
 
   useEffect(() => {
