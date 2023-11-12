@@ -10,7 +10,7 @@ export async function api(path: string) {
   return await fetch(url, {
     headers,
     next: {
-      revalidate: 5, // 1hr
+      revalidate: 60 * 60 * 1, // 1hr
     },
   })
 }
