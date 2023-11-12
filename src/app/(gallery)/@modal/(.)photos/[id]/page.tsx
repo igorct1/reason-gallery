@@ -1,4 +1,4 @@
-import { PhotosList } from '@/app/components/photos/photos'
+import { PhotosList } from '@/app/components/photos/photos-list'
 import { Button } from '@/app/components/shared/button'
 import Modal from '@/app/components/shared/modal'
 import { UserProfile } from '@/app/components/user/user-profile'

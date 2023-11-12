@@ -1,4 +1,4 @@
-import { PhotosList } from '@/app/components/photos/photos'
+import { PhotosList } from '@/app/components/photos/photos-list'
 import { Hero } from '@/app/components/shared/hero'
 
 export default function Home() {

@@ -1,4 +1,4 @@
-import { PhotosList } from '@/app/components/photos/photos'
+import { PhotosList } from '@/app/components/photos/photos-list'
 import { UserProfileFull } from '@/app/components/user/user-profile-full'
 import { api } from '@/app/data/lib/unsplash'
 

@@ -1,4 +1,4 @@
-import { PhotosList } from '@/app/components/photos/photos'
+import { PhotosList } from '@/app/components/photos/photos-list'
 import { Button } from '@/app/components/shared/button'
 import { UserProfile } from '@/app/components/user/user-profile'
 import { SinglePhoto } from '@/app/data/@types/single-photo'
