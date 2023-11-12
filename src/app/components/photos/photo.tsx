@@ -1,0 +1,46 @@
+import { IPhoto } from '@/app/data/@types/photo'
+import { Download } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { UserProfile } from '../user/user-profile'
+import { Button } from '../shared/button'
+
+type Photo = {
+  photo: IPhoto
+}
+
+export function Photo({ photo }: Photo) {
+  function hidePageOverflow() {
+    const document = window.document.documentElement
+    document.style.overflow = 'hidden'
+  }
+
+  return (
+    <div
+      className="group relative overflow-hidden rounded-md"
+      key={photo.urls.full}
+    >
+      <Link
+        onClick={hidePageOverflow}
+        href={`/photos/${photo.id}`}
+        className="hover:cursor-zoom-in group-hover:brightness-[0.4]"
+      >
+        <Image
+          src={photo.urls.full}
+          alt=""
+          width={1000}
+          height={1000}
+          placeholder={'blur'}
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8cOJEPQAHsQLhzPEfMgAAAABJRU5ErkJggg=="
+        />
+      </Link>
+
+      <div className="absolute bottom-0 mt-auto hidden w-full  justify-between p-4 group-hover:flex">
+        <UserProfile user={photo.user} />
+        <Button variant="bg-zinc-800 hover:bg-zinc-900 hover:border-zinc-700">
+          <Download />
+        </Button>
+      </div>
+    </div>
+  )
+}
