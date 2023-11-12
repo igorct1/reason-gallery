@@ -1,4 +1,4 @@
-import { PhotosGrid } from '@/app/components/photos-grid'
+import { PhotosGrid } from '@/app/components/photos/photos-grid'
 import { api } from '@/app/data/lib/unsplash'
 
 async function getSearchedPhotos(query: string) {
