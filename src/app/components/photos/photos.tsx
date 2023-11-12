@@ -5,14 +5,17 @@ interface PhotosListProps {
   user?: string
 }
 
+async function getPhotos(endpoint: string) {
+  const response = await api(endpoint)
+  const photos = await response.json()
+
+  return photos
+}
+
 export async function PhotosList({ user }: PhotosListProps) {
-  let url = await api('/photos')
+  const endpoint = user ? `/users/${user}/photos` : '/photos'
 
-  if (user) {
-    url = await api(`/users/${user}/photos`)
-  }
-
-  const photos = await url.json()
+  const photos = await getPhotos(endpoint)
 
   return <PhotosGrid photos={photos} />
 }
