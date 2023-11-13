@@ -19,7 +19,7 @@ export default async function Search({ params }: SearchProps) {
   const query = params.q.replace(/%20/g, ' ')
 
   return (
-    <div className="mx-auto max-w-[1440px] ">
+    <div className="mx-auto max-w-[1440px] px-4">
       <div className="py-6">
         <h2 className="text-6xl font-semibold">{query}</h2>
         <p className="pt-2 text-sm">
@@ -27,8 +27,8 @@ export default async function Search({ params }: SearchProps) {
           <br />
           created by skilled photographers from around the world.
         </p>
-        <p className="pt-4 text-sm">
-          Results:{' '}
+        <p className="text-bold pt-4 text-sm">
+          Results :{' '}
           <span className="text-semibold text-xl">
             {photos.total.toLocaleString('pt-BR')}
           </span>

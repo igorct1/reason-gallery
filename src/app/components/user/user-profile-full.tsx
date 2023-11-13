@@ -10,7 +10,7 @@ export interface UserProfileFullProps {
 export function UserProfileFull({ user }: UserProfileFullProps) {
   return (
     <div className="mx-4 flex max-w-[800px] flex-col items-start gap-10 py-16 md:flex-row lg:mx-auto">
-      <div className="px-4">
+      <div className="lg:px-4">
         <Image
           src={user.profile_image.large}
           alt=""
