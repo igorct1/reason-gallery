@@ -22,7 +22,7 @@ export default async function User({ params }: UserProps) {
     <div>
       <UserProfileFull user={user} />
       <div className="h-[1px] w-full bg-zinc-700" />
-      <div className="mx-auto max-w-[1440px] py-8">
+      <div className="mx-auto max-w-[1440px] px-4 py-8">
         <PhotosList user={user.username} />
       </div>
     </div>

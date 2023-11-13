@@ -13,7 +13,7 @@ export function Header() {
         <InputSearch />
       </div>
       <div className="flex items-center gap-4">
-        <div className="flex items-center gap-8">
+        <div className=" hidden items-center gap-8 md:flex">
           <button className="rounded-md p-2.5 text-zinc-200 transition duration-300 hover:bg-zinc-800 hover:text-zinc-50">
             Collections
           </button>

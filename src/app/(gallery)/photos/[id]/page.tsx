@@ -38,7 +38,7 @@ export default async function PhotoModal({ params }: PhotoModalProps) {
             <UserProfile user={photo.user} size="medium" />
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="bg-zinc-700/75 hover:bg-zinc-700 hover:text-50 px-6 py-2.5">
+            <Button variant="bg-zinc-700/75 hover:bg-zinc-700 hover:text-50 px-4 py-2.5">
               Download
               <ChevronDown />
             </Button>
@@ -52,14 +52,14 @@ export default async function PhotoModal({ params }: PhotoModalProps) {
             width={600}
             height={600}
             alt={photo.alt_description}
-            className="max-h-[720px] max-w-[600px]"
+            className="max-h-[720px] w-full max-w-[600px]"
             quality={100}
           />
         </div>
 
         {/* image info */}
         <div className="flex flex-col gap-16">
-          <div className="flex gap-20">
+          <div className="flex flex-col gap-4 md:flex-row md:gap-20">
             <div>
               <strong className="text-sm font-semibold">Views</strong>
               <p className="text-lg text-zinc-400">

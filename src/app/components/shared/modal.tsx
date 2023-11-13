@@ -41,7 +41,7 @@ export default function Modal({ children }: { children: React.ReactNode }) {
     >
       <div
         ref={wrapper}
-        className="mx-36 my-4 flex min-h-screen flex-col rounded-lg bg-zinc-900 px-6"
+        className="my-12 flex min-h-screen flex-col rounded-lg bg-zinc-900 px-6 md:mx-36"
       >
         {children}
       </div>

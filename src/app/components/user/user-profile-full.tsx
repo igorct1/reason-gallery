@@ -9,7 +9,7 @@ export interface UserProfileFullProps {
 
 export function UserProfileFull({ user }: UserProfileFullProps) {
   return (
-    <div className="mx-auto flex max-w-[800px] items-start gap-10 py-16">
+    <div className="mx-4 flex max-w-[800px] flex-col items-start gap-10 py-16 md:flex-row lg:mx-auto">
       <div className="px-4">
         <Image
           src={user.profile_image.large}
@@ -54,10 +54,10 @@ export function UserProfileFull({ user }: UserProfileFullProps) {
             )}
           </ul>
         </div>
-        <div className="flex flex-col py-4">
+        <div className="flex flex-col  py-4">
           <h3>Interests</h3>
 
-          <div className="mt-4 flex gap-2">
+          <div className="mt-4 flex flex-wrap gap-2">
             {user.tags.custom.map((tag) => {
               return (
                 <Link

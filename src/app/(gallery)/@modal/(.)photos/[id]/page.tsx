@@ -1,11 +1,13 @@
 import { PhotosList } from '@/app/components/photos/photos-list'
 import { Button } from '@/app/components/shared/button'
 import Modal from '@/app/components/shared/modal'
+import { ModalClose } from '@/app/components/shared/modal-close'
 import { UserProfile } from '@/app/components/user/user-profile'
 import { SinglePhoto } from '@/app/data/@types/single-photo'
 import { api } from '@/app/data/lib/unsplash'
 import { formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
+
 import {
   BookCheck,
   Camera,
@@ -41,8 +43,10 @@ export default async function PhotoModal({ params }: PhotoModalProps) {
   return (
     <Modal>
       <div className="flex flex-col gap-8">
+        <ModalClose />
+
         {/* image profile */}
-        <div className="sticky top-0 flex items-center justify-between bg-zinc-900 py-4">
+        <div className="sticky top-0  flex items-center justify-between bg-zinc-900 py-4">
           <div className="flex items-center gap-4">
             <UserProfile user={photo.user} size="medium" />
           </div>
@@ -61,7 +65,7 @@ export default async function PhotoModal({ params }: PhotoModalProps) {
             width={600}
             height={600}
             alt={photo.alt_description}
-            className="max-h-[720px] min-w-[600px]"
+            className="max-h-[720px] w-full max-w-[600px]"
             quality={100}
           />
         </div>
