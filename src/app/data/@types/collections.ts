@@ -8,6 +8,15 @@ export interface Collection {
   total_photos: number
   cover_photo: IPhoto
 
+  user: {
+    name: string
+    username: string
+
+    profile_image: {
+      large: string
+    }
+  }
+
   preview_photos: IPhoto[]
   tags: {
     title: string

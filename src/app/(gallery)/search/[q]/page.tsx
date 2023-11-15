@@ -14,7 +14,11 @@ export default async function Search({ params }: SearchProps) {
   return (
     <div className="mx-auto max-w-[1440px] px-4">
       <div className="py-6">
-        <h2 className="text-6xl font-semibold">{query}</h2>
+        <div className="space-y-1">
+          <h2 className="text-6xl font-semibold">{query}</h2>
+          <div className="h-[2px] w-24 bg-zinc-700" />
+        </div>
+
         <p className="pt-2 text-sm">
           Dive into a vast gallery of breathtaking, authentic photographs
           <br />

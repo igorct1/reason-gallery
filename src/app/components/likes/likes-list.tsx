@@ -1,5 +1,4 @@
 'use client'
-
 import { IPhoto } from '@/app/data/@types/photo'
 import { useEffect, useState } from 'react'
 import { PhotosGrid } from '../photos/photos-grid'
