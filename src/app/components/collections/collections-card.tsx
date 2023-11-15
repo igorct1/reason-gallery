@@ -18,7 +18,7 @@ export function CollectionCard({ collection }: CollectionProps) {
           src={collection.preview_photos[0].urls.full}
           width={500}
           height={500}
-          className="col-span-2 row-span-2 h-full w-full"
+          className="col-span-2 row-span-2 h-full w-full object-cover"
           placeholder={'blur'}
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8cOJEPQAHsQLhzPEfMgAAAABJRU5ErkJggg=="
         />
@@ -27,7 +27,7 @@ export function CollectionCard({ collection }: CollectionProps) {
           src={collection.preview_photos[1].urls.full}
           width={500}
           height={500}
-          className="h-full"
+          className="h-full object-cover"
           placeholder={'blur'}
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8cOJEPQAHsQLhzPEfMgAAAABJRU5ErkJggg=="
         />
@@ -36,7 +36,7 @@ export function CollectionCard({ collection }: CollectionProps) {
           src={collection.preview_photos[2].urls.full}
           width={500}
           height={500}
-          className="h-full"
+          className="h-full object-cover"
           placeholder={'blur'}
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8cOJEPQAHsQLhzPEfMgAAAABJRU5ErkJggg=="
         />
