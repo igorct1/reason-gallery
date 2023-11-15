@@ -1,12 +1,5 @@
-import { PhotosGrid } from '@/app/components/photos/photos-grid'
-import { api } from '@/app/data/lib/unsplash'
-
-async function getSearchedPhotos(query: string) {
-  const photos = await api(`/search/photos?query=${query}`)
-  const data = await photos.json()
-
-  return data
-}
+import { SearchList } from '@/app/components/search/search-list'
+import { getSearchedPhotos } from '@/app/data/api/get-searched-photos'
 
 export interface SearchProps {
   params: {
@@ -15,7 +8,7 @@ export interface SearchProps {
 }
 
 export default async function Search({ params }: SearchProps) {
-  const photos = await getSearchedPhotos(params.q)
+  const photos = await getSearchedPhotos(params.q, 2)
   const query = params.q.replace(/%20/g, ' ')
 
   return (
@@ -37,7 +30,7 @@ export default async function Search({ params }: SearchProps) {
       <div className="h-[1px] w-full bg-zinc-700 " />
 
       <div className="py-6">
-        <PhotosGrid photos={photos.results} />
+        <SearchList q={query} />
       </div>
     </div>
   )

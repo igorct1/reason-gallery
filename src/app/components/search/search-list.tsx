@@ -1,17 +1,16 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { PhotosGrid } from './photos-grid'
 
 import { IPhoto } from '@/app/data/@types/photo'
-import { getPhotos } from '@/app/data/api/get-photos'
-import { IUser } from '@/app/data/@types/user'
-import { getUserPhotos } from '@/app/data/api/get-user-photos'
 
-export interface PhotosListProps {
-  user?: string
+import { PhotosGrid } from '../photos/photos-grid'
+import { getSearchedPhotos } from '@/app/data/api/get-searched-photos'
+
+export interface SearchListProps {
+  q: string
 }
 
-export function PhotosList({ user }: PhotosListProps) {
+export function SearchList({ q }: SearchListProps) {
   const [photos, setPhotos] = useState<IPhoto[]>([])
   const [page, setPage] = useState<number>(1)
   const [infinite, setInfinite] = useState(true)
@@ -20,21 +19,17 @@ export function PhotosList({ user }: PhotosListProps) {
   photos.forEach((item) => {
     map.set(item.id, item)
   })
+
   const filteredImages = Array.from(map.values())
 
   useEffect(() => {
     async function call() {
-      if (user) {
-        const photos = await getUserPhotos(user, page)
-        setPhotos((state) => [...state, ...photos])
-      } else {
-        const photos = await getPhotos(page)
-        setPhotos((state) => [...state, ...photos])
-      }
+      const photos = await getSearchedPhotos(q, page)
+      setPhotos((state) => [...state, ...photos.results])
     }
 
     call()
-  }, [page, user])
+  }, [page, q])
 
   useEffect(() => {
     let wait = false

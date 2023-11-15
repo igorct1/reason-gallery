@@ -1,6 +1,9 @@
+import Link from 'next/link'
 import { InputSearch } from './input-search'
 
 export async function Hero() {
+  const trandings = ['mountain', 'technology', 'city', 'forest']
+
   return (
     <div className="bg-hero bg-cover bg-fixed bg-center bg-no-repeat px-4 py-44">
       <div className="mx-auto flex h-full  w-full max-w-[800px] flex-col gap-2 ">
@@ -16,15 +19,13 @@ export async function Hero() {
           <strong>Trending: </strong>
 
           <ul className="flex gap-2">
-            <a href="#" className="underline">
-              mountain
-            </a>
-            <a href="#" className="underline">
-              technology
-            </a>
-            <a href="#" className="underline">
-              city
-            </a>
+            {trandings.map((item) => {
+              return (
+                <Link href={`/search/${item}`} key={item} className="underline">
+                  {item}
+                </Link>
+              )
+            })}
           </ul>
         </div>
       </div>

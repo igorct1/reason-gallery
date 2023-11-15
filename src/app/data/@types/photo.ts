@@ -2,7 +2,8 @@ export interface IPhoto {
   alt_description: string
   description: string
   id: string
-
+  results: IPhoto[]
+  total: number
   urls: {
     full: string
     small: string

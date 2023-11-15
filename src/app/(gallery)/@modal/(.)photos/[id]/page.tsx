@@ -4,7 +4,8 @@ import Modal from '@/app/components/shared/modal'
 import { ModalClose } from '@/app/components/shared/modal-close'
 import { UserProfile } from '@/app/components/user/user-profile'
 import { SinglePhoto } from '@/app/data/@types/single-photo'
-import { api } from '@/app/data/lib/unsplash'
+import { api } from '@/app/data/api/unsplash'
+
 import { formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
@@ -116,7 +117,7 @@ export default async function PhotoModal({ params }: PhotoModalProps) {
 
       {/* user photo list */}
       <div className="py-8">
-        <PhotosList user={photo.user.username} />
+        <PhotosList />
       </div>
     </Modal>
   )

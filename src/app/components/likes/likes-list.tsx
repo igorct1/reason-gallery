@@ -1,36 +1,31 @@
 'use client'
-import { useEffect, useState } from 'react'
-import { PhotosGrid } from './photos-grid'
 
 import { IPhoto } from '@/app/data/@types/photo'
-import { getPhotos } from '@/app/data/api/get-photos'
-import { IUser } from '@/app/data/@types/user'
-import { getUserPhotos } from '@/app/data/api/get-user-photos'
+import { useEffect, useState } from 'react'
+import { PhotosGrid } from '../photos/photos-grid'
+import { getUserLikes } from '@/app/data/api/get-user-likes'
 
-export interface PhotosListProps {
-  user?: string
+export interface LikesListProps {
+  user: string
 }
 
-export function PhotosList({ user }: PhotosListProps) {
+export function LikesList({ user }: LikesListProps) {
   const [photos, setPhotos] = useState<IPhoto[]>([])
   const [page, setPage] = useState<number>(1)
   const [infinite, setInfinite] = useState(true)
+
   const map = new Map()
 
   photos.forEach((item) => {
     map.set(item.id, item)
   })
+
   const filteredImages = Array.from(map.values())
 
   useEffect(() => {
     async function call() {
-      if (user) {
-        const photos = await getUserPhotos(user, page)
-        setPhotos((state) => [...state, ...photos])
-      } else {
-        const photos = await getPhotos(page)
-        setPhotos((state) => [...state, ...photos])
-      }
+      const photos = await getUserLikes(user, page)
+      setPhotos((state) => [...state, ...photos])
     }
 
     call()
@@ -67,5 +62,9 @@ export function PhotosList({ user }: PhotosListProps) {
     }
   }, [infinite])
 
-  return <PhotosGrid photos={filteredImages} />
+  return (
+    <div className="mx-auto max-w-[1440px] py-8">
+      <PhotosGrid photos={filteredImages} />
+    </div>
+  )
 }

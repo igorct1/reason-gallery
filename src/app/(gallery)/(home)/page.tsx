@@ -1,7 +1,7 @@
 import { PhotosList } from '@/app/components/photos/photos-list'
 import { Hero } from '@/app/components/shared/hero'
 
-export default function Home() {
+export default async function Home() {
   return (
     <div>
       <Hero />
