@@ -1,13 +1,11 @@
 import { PhotosList } from '@/app/components/photos/photos-list'
-import { Button } from '@/app/components/shared/button'
+
 import Modal from '@/app/components/shared/modal'
 import { ModalClose } from '@/app/components/shared/modal-close'
 import { UserProfile } from '@/app/components/user/user-profile'
 import { SinglePhoto } from '@/app/data/@types/single-photo'
 import { api } from '@/app/data/api/unsplash'
-
-import { formatDistanceToNow } from 'date-fns'
-import ptBR from 'date-fns/locale/pt-BR'
+import { formatDate } from '@/app/data/utils/formatDate'
 
 import {
   BookCheck,
@@ -18,6 +16,7 @@ import {
 } from 'lucide-react'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface PhotoModalProps {
   params: {
@@ -35,11 +34,7 @@ async function getPhotoModalInfo(id: string): Promise<SinglePhoto> {
 export default async function PhotoModal({ params }: PhotoModalProps) {
   const photo = await getPhotoModalInfo(params.id)
   const data = new Date(photo.created_at)
-
-  const formattedDate = formatDistanceToNow(data, {
-    addSuffix: true,
-    locale: ptBR,
-  })
+  const formattedDate = formatDate(data)
 
   return (
     <Modal>
@@ -51,11 +46,17 @@ export default async function PhotoModal({ params }: PhotoModalProps) {
           <div className="flex items-center gap-4">
             <UserProfile user={photo.user} size="medium" />
           </div>
-          <div className="flex items-center gap-4">
-            <Button variant="bg-zinc-700/75 hover:bg-zinc-700 hover:text-50 px-6 py-2.5">
+          <div className=" flex h-10 items-center gap-4 rounded-md bg-zinc-700">
+            <Link
+              href={`${photo.links.download}&force=true`}
+              className="px-4"
+              download
+            >
               Download
+            </Link>
+            <button className="h-full w-full rounded-br-md rounded-tr-md bg-zinc-800 px-2">
               <ChevronDown />
-            </Button>
+            </button>
           </div>
         </div>
 

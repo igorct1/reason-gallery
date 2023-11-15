@@ -1,10 +1,9 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { PhotosGrid } from './photos-grid'
-
 import { IPhoto } from '@/app/data/@types/photo'
 import { getPhotos } from '@/app/data/api/get-photos'
-import { IUser } from '@/app/data/@types/user'
+
 import { getUserPhotos } from '@/app/data/api/get-user-photos'
 
 export interface PhotosListProps {
@@ -44,7 +43,7 @@ export function PhotosList({ user }: PhotosListProps) {
       const height = document.body.offsetHeight - window.innerHeight
 
       if (infinite) {
-        if (scroll > height * 0.9 && !wait) {
+        if (scroll > height * 0.8 && !wait) {
           setPage((prev) => prev + 1)
           wait = true
 

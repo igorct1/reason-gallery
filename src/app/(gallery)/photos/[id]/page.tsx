@@ -1,5 +1,5 @@
 import { PhotosList } from '@/app/components/photos/photos-list'
-import { Button } from '@/app/components/shared/button'
+
 import { UserProfile } from '@/app/components/user/user-profile'
 import { SinglePhoto } from '@/app/data/@types/single-photo'
 import { api } from '@/app/data/api/unsplash'
@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface PhotoModalProps {
   params: {
@@ -37,11 +38,17 @@ export default async function PhotoModal({ params }: PhotoModalProps) {
           <div className="flex items-center gap-4">
             <UserProfile user={photo.user} size="medium" />
           </div>
-          <div className="flex items-center gap-4">
-            <Button variant="bg-zinc-700/75 hover:bg-zinc-700 hover:text-50 px-4 py-2.5">
+          <div className=" flex h-10 items-center gap-4 rounded-md bg-zinc-700">
+            <Link
+              href={`${photo.links.download}&force=true`}
+              className="px-4"
+              download
+            >
               Download
+            </Link>
+            <button className="h-full w-full rounded-br-md rounded-tr-md bg-zinc-800 px-2">
               <ChevronDown />
-            </Button>
+            </button>
           </div>
         </div>
 

@@ -3,7 +3,6 @@ import { Download } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { UserProfile } from '../user/user-profile'
-import { Button } from '../shared/button'
 
 type Photo = {
   photo: IPhoto
@@ -23,7 +22,7 @@ export function Photo({ photo }: Photo) {
       <Link
         onClick={hidePageOverflow}
         href={`/photos/${photo.id}`}
-        className=" hover:cursor-zoom-in group-hover:brightness-[0.4]"
+        className=" overflow-hidden rounded-md hover:cursor-zoom-in group-hover:brightness-[0.4]"
       >
         <Image
           src={photo.urls.full}
@@ -37,9 +36,13 @@ export function Photo({ photo }: Photo) {
 
       <div className="bottom-0 mt-auto flex w-full  justify-between py-4  md:absolute md:hidden md:p-4 md:group-hover:flex">
         <UserProfile user={photo.user} />
-        <Button variant="bg-zinc-800 hover:bg-zinc-900 hover:border-zinc-700">
+        <Link
+          href={`${photo.links.download}&force=true`}
+          download
+          className="flex items-center gap-2 rounded-md border border-transparent bg-zinc-800 px-2 py-1.5 text-zinc-200 transition duration-300 hover:border-zinc-700 hover:bg-zinc-900 hover:text-zinc-50"
+        >
           <Download />
-        </Button>
+        </Link>
       </div>
     </div>
   )

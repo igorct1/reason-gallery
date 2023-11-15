@@ -17,4 +17,8 @@ export interface IPhoto {
       medium: string
     }
   }
+
+  links: {
+    download: string
+  }
 }
