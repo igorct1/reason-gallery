@@ -103,7 +103,7 @@ export default async function PhotoModal({ params }: PhotoModalProps) {
 
       {/* user photo list */}
       <div className="mx-auto max-w-[1440px] py-8">
-        <PhotosList user={photo.user.username} />
+        <PhotosList />
       </div>
     </div>
   )
