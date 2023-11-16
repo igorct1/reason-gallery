@@ -1,5 +1,5 @@
 import { PhotosGrid } from '@/app/components/photos/photos-grid'
-import { getCollectionPhotos } from '@/app/data/api/get-collections'
+import { getCollectionPhotos } from '@/app/data/api/get-collections-photos'
 import Image from 'next/image'
 import Link from 'next/link'
 

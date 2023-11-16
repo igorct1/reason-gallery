@@ -45,7 +45,7 @@ export function CollectionCard({ collection }: CollectionProps) {
         <strong>{collection.title}</strong>
         <div>
           {collection.total_photos} - Created by{' '}
-          <span className="underline">NEOM</span>
+          <span className="underline">{collection.user.username}</span>
         </div>
       </div>
 

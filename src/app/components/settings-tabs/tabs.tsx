@@ -4,9 +4,9 @@ import { useState } from 'react'
 import { TabItem } from './tab-item'
 import { Folder, Heart, ImageIcon } from 'lucide-react'
 import { PhotosList } from '../photos/photos-list'
-import { Collections } from '../shared/collections'
 import { Likes } from '../shared/likes'
 import { IUser } from '@/app/data/@types/user'
+import { Collections } from '../shared/collections'
 
 export interface SettingsTabsProps {
   user: IUser
@@ -48,7 +48,7 @@ export function SettingsTabs({ user }: SettingsTabsProps) {
       <Tabs.Content value="photos">
         <div className="mx-auto max-w-[1440px] px-4 py-8">
           {user.total_photos > 0 ? (
-            <PhotosList user={user.username} />
+            <PhotosList />
           ) : (
             <span className="flex justify-center">
               There`s no photos to be showed.

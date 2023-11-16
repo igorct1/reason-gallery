@@ -25,6 +25,7 @@ export function Photo({ photo }: Photo) {
         className=" overflow-hidden rounded-md hover:cursor-zoom-in group-hover:brightness-[0.4]"
       >
         <Image
+          quality={70}
           src={photo.urls.full}
           alt=""
           width={1000}

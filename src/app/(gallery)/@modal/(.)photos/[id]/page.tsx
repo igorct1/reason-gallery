@@ -1,12 +1,10 @@
-import { PhotosList } from '@/app/components/photos/photos-list'
-
 import Modal from '@/app/components/shared/modal'
 import { ModalClose } from '@/app/components/shared/modal-close'
+import { UserList } from '@/app/components/user/user-list'
 import { UserProfile } from '@/app/components/user/user-profile'
 import { SinglePhoto } from '@/app/data/@types/single-photo'
 import { api } from '@/app/data/api/unsplash'
 import { formatDate } from '@/app/data/utils/formatDate'
-
 import {
   BookCheck,
   Camera,
@@ -14,7 +12,6 @@ import {
   MapPin,
   ShieldCheck,
 } from 'lucide-react'
-
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -33,8 +30,6 @@ async function getPhotoModalInfo(id: string): Promise<SinglePhoto> {
 
 export default async function PhotoModal({ params }: PhotoModalProps) {
   const photo = await getPhotoModalInfo(params.id)
-  const data = new Date(photo.created_at)
-  const formattedDate = formatDate(data)
 
   return (
     <Modal>
@@ -98,7 +93,7 @@ export default async function PhotoModal({ params }: PhotoModalProps) {
             {photo.created_at && (
               <p className="flex items-center gap-2 text-sm">
                 <BookCheck className="h-4 w-4" />
-                {formattedDate}
+                {formatDate(new Date(photo.created_at))}
               </p>
             )}
             {photo.exif.name && (
@@ -118,7 +113,7 @@ export default async function PhotoModal({ params }: PhotoModalProps) {
 
       {/* user photo list */}
       <div className="py-8">
-        <PhotosList />
+        <UserList user={photo.user.username} />
       </div>
     </Modal>
   )

@@ -10,6 +10,7 @@ export default function HomeLayout({ children, modal }: HomeLayout) {
   return (
     <div className="mx-auto min-h-screen w-full">
       <Header />
+
       {children}
       {modal}
     </div>

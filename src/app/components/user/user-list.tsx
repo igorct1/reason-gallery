@@ -1,10 +1,17 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { PhotosGrid } from './photos-grid'
+
 import { IPhoto } from '@/app/data/@types/photo'
 import { getPhotos } from '@/app/data/api/get-photos'
 
-export function PhotosList() {
+import { getUserPhotos } from '@/app/data/api/get-user-photos'
+import { PhotosGrid } from '../photos/photos-grid'
+
+export interface UserListProps {
+  user: string
+}
+
+export function UserList({ user }: UserListProps) {
   const [photos, setPhotos] = useState<IPhoto[]>([])
   const [page, setPage] = useState<number>(1)
   const [infinite, setInfinite] = useState(true)
@@ -17,11 +24,14 @@ export function PhotosList() {
 
   useEffect(() => {
     async function call() {
-      const photos = await getPhotos(page)
-      setPhotos((state) => [...state, ...photos])
+      if (user) {
+        const photos = await getUserPhotos(user, page)
+        setPhotos((state) => [...state, ...photos])
+      }
     }
+
     call()
-  }, [page])
+  }, [page, user])
 
   useEffect(() => {
     let wait = false

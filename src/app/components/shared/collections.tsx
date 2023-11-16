@@ -1,5 +1,5 @@
-import { CollectionList } from '../collections/collections-list'
+import { UserCollectionList } from '../collections/user-collections-list'
 
 export function Collections({ user }: { user: string }) {
-  return <CollectionList user={user} />
+  return <UserCollectionList user={user} />
 }
