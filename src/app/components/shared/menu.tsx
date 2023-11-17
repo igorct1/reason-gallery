@@ -16,7 +16,7 @@ export function Menu() {
         <MenuIcon />
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Content className="animate-slideIn absolute right-4 top-20  flex  flex-col overflow-hidden rounded-md bg-zinc-800">
+        <Dialog.Content className="animate-slideIn absolute  right-4  top-20 flex flex-col overflow-hidden rounded-md bg-zinc-800">
           <ul className="flex flex-col">
             <Link
               href="/collections"

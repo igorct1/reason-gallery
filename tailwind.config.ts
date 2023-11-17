@@ -7,9 +7,6 @@ const config: Config = {
       backgroundImage: {
         hero: "url('/bg-hero.jpg')",
       },
-      animation: {
-        slideIn: 'slideIn 0.3s ease-in-out',
-      },
       keyframes: {
         slideIn: {
           from: {
@@ -19,6 +16,9 @@ const config: Config = {
             transform: 'translateX(0)',
           },
         },
+      },
+      animation: {
+        slideIn: 'slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1)',
       },
     },
   },
