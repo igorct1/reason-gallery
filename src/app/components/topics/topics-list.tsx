@@ -1,11 +1,11 @@
 'use client'
-import { Topics } from '@/app/data/@types/topics'
 import { getTopics } from '@/app/data/api/get-topics'
 import { useCallback, useEffect, useState } from 'react'
 import { TopicsCard } from './topics-card'
+import { Topic } from '@/app/data/@types/topics'
 
 export function TopicsList() {
-  const [topics, setTopics] = useState<Topics[]>([])
+  const [topics, setTopics] = useState<Topic[]>([])
 
   const call = useCallback(async () => {
     const topics = await getTopics(1)

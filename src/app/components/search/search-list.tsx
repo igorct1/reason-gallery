@@ -13,7 +13,7 @@ export interface SearchListProps {
 export function SearchList({ q }: SearchListProps) {
   const [photos, setPhotos] = useState<IPhoto[]>([])
   const [page, setPage] = useState<number>(1)
-  const [infinite, setInfinite] = useState(true)
+  const infinite = true
   const map = new Map()
 
   photos.forEach((item) => {

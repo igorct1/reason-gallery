@@ -1,10 +1,10 @@
-import { Topics } from '@/app/data/@types/topics'
+import { Topic } from '@/app/data/@types/topics'
 import { format } from 'date-fns'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export interface TopicsCardProps {
-  topic: Topics
+  topic: Topic
 }
 
 export function TopicsCard({ topic }: TopicsCardProps) {

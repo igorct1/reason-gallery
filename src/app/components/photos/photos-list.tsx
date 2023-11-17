@@ -7,7 +7,7 @@ import { getPhotos } from '@/app/data/api/get-photos'
 export function PhotosList() {
   const [photos, setPhotos] = useState<IPhoto[]>([])
   const [page, setPage] = useState<number>(1)
-  const [infinite, setInfinite] = useState(true)
+  const infinite = true
   const map = new Map()
 
   photos.forEach((item) => {

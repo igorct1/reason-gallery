@@ -13,7 +13,7 @@ export interface UserListProps {
 export function UserList({ user }: UserListProps) {
   const [photos, setPhotos] = useState<IPhoto[]>([])
   const [page, setPage] = useState<number>(1)
-  const [infinite, setInfinite] = useState(true)
+  const infinite = true
   const map = new Map()
 
   photos.forEach((item) => {

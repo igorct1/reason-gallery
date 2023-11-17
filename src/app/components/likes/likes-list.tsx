@@ -11,7 +11,7 @@ export interface LikesListProps {
 export function LikesList({ user }: LikesListProps) {
   const [photos, setPhotos] = useState<IPhoto[]>([])
   const [page, setPage] = useState<number>(1)
-  const [infinite, setInfinite] = useState(true)
+  const infinite = true
 
   const map = new Map()
 

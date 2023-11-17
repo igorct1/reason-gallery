@@ -8,7 +8,7 @@ import Link from 'next/link'
 export function CollectionList() {
   const [collections, setCollections] = useState<Collection[]>([])
   const [page, setPage] = useState<number>(1)
-  const [infinite, setInfinite] = useState(true)
+  const infinite = true
   const map = new Map()
 
   collections.forEach((item) => {
