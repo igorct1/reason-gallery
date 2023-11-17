@@ -1,9 +1,8 @@
-import { ReactNode } from 'react'
-
 export interface TitleProps {
-  title: ReactNode
-  text: ReactNode
+  title: string
+  text?: string
 }
+
 export function Title({ title, text }: TitleProps) {
   return (
     <div className="flex flex-col gap-2">

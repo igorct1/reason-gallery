@@ -4,6 +4,7 @@ import { Collection } from '@/app/data/@types/collections'
 import { getCollections } from '@/app/data/api/get-collections'
 import { CollectionCard } from './collections-card'
 import Link from 'next/link'
+import { Title } from '../shared/title'
 
 export function CollectionList() {
   const [collections, setCollections] = useState<Collection[]>([])
@@ -56,9 +57,9 @@ export function CollectionList() {
   }, [infinite])
 
   return (
-    <section className="mx-auto max-w-[1440px] px-4 py-8">
-      <h2 className="text-6xl">Collections</h2>
-      <p className="py-4 leading-6">
+    <section className="mx-auto max-w-[1440px] px-4 py-8 lg:py-14">
+      <Title title="Collections" />
+      <p className="py-4 leading-6 pb-8">
         Explore the world through collections of beautiful photos free to use
         under the <br />
         <Link
