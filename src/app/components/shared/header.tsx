@@ -1,7 +1,7 @@
-import { Menu } from 'lucide-react'
 import Link from 'next/link'
 
 import { InputSearch } from './input-search'
+import { Menu } from './menu'
 
 export function Header() {
   return (
@@ -25,7 +25,7 @@ export function Header() {
             Topics
           </button>
         </div>
-        <Menu className="cursor-pointer text-zinc-200 hover:text-zinc-50" />
+        <Menu />
       </div>
     </header>
   )
