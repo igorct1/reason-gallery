@@ -1,6 +1,6 @@
-import { PhotosGrid } from '@/app/components/photos/photos-grid'
+import { CollectionPhotos } from '@/app/components/collections/collection-photos'
 import { Title } from '@/app/components/shared/title'
-import { getCollectionPhotos } from '@/app/data/api/get-collections-photos'
+import { getCollection } from '@/app/data/api/get-collection'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -11,7 +11,7 @@ interface CollectionsProps {
 }
 
 export default async function Collections({ params }: CollectionsProps) {
-  const { collection, photos } = await getCollectionPhotos(params.id, 1)
+  const collection = await getCollection(params.id)
 
   return (
     <div className="mx-auto max-w-[1440px] py-8 px-4  lg:py-14 lg:space-y-14">
@@ -33,7 +33,7 @@ export default async function Collections({ params }: CollectionsProps) {
       </div>
       <div className="space-y-4 mt-4">
         <p>{collection.total_photos} photos</p>
-        <PhotosGrid photos={photos} />
+        <CollectionPhotos collectionId={collection.id} />
       </div>
     </div>
   )

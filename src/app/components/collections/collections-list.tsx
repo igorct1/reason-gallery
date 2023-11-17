@@ -15,6 +15,7 @@ export function CollectionList() {
   collections.forEach((item) => {
     map.set(item.id, item)
   })
+
   const filteredCollections = Array.from(map.values())
 
   useEffect(() => {
@@ -70,7 +71,7 @@ export function CollectionList() {
           Unsplash License.
         </Link>
       </p>
-      <div className="grid grid-cols-1 gap-4  py-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-10  py-8 md:grid-cols-2 lg:grid-cols-3">
         {filteredCollections.map((collection) => {
           return <CollectionCard key={collection.id} collection={collection} />
         })}
