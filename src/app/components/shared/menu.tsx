@@ -30,12 +30,6 @@ export function Menu() {
             >
               Topics
             </Link>
-            <Link
-              href="/about"
-              className="p-4 text-zinc-200 transition-all duration-300 hover:bg-zinc-900 hover:text-zinc-50"
-            >
-              About
-            </Link>
           </ul>
           <div className="flex justify-between gap-6 p-4">
             <Link

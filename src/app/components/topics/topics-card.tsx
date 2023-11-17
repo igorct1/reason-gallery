@@ -2,6 +2,7 @@ import { Topic } from '@/app/data/@types/topics'
 import { format } from 'date-fns'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export interface TopicsCardProps {
   topic: Topic
@@ -9,10 +10,11 @@ export interface TopicsCardProps {
 
 export function TopicsCard({ topic }: TopicsCardProps) {
   const data = format(new Date(topic.updated_at), 'MM/dd/yyyy')
+  const router = useRouter()
 
   return (
-    <Link
-      href={`/topics`}
+    <div
+      onClick={() => router.push(`/topics/${topic.id}`)}
       className="relative cursor-pointer overflow-hidden rounded-md border border-transparent shadow-[0_3px_10px_rgb(0,0,0,0.2)] shadow-zinc-800 transition-all duration-300 hover:border-zinc-700"
     >
       <div className="relative">
@@ -59,6 +61,6 @@ export function TopicsCard({ topic }: TopicsCardProps) {
           <p>Photos {topic.total_photos.toLocaleString('pt-BR')}</p>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
