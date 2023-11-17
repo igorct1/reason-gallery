@@ -21,9 +21,12 @@ export function Header() {
             Collections
           </Link>
           <div className="h-4 w-[1px] bg-zinc-400" />
-          <button className="rounded-md p-2.5 text-zinc-200 duration-300 hover:bg-zinc-800 hover:text-zinc-50">
+          <Link
+            href="/topics"
+            className="rounded-md p-2.5 text-zinc-200 duration-300 hover:bg-zinc-800 hover:text-zinc-50"
+          >
             Topics
-          </button>
+          </Link>
         </div>
         <Menu />
       </div>

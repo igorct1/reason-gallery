@@ -62,7 +62,7 @@ export function LikesList({ user }: LikesListProps) {
   }, [infinite])
 
   return (
-    <div className="mx-auto max-w-[1440px] py-8">
+    <div className="mx-auto max-w-[1440px] px-4 py-8">
       <PhotosGrid photos={filteredImages} />
     </div>
   )

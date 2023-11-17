@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import * as Dialog from '@radix-ui/react-dialog'
 import {
   GithubIcon,
@@ -7,7 +8,7 @@ import {
   MenuIcon,
   TwitterIcon,
 } from 'lucide-react'
-import Link from 'next/link'
+
 export function Menu() {
   return (
     <Dialog.Root>

@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 
 import { IPhoto } from '@/app/data/@types/photo'
-import { getPhotos } from '@/app/data/api/get-photos'
 
 import { getUserPhotos } from '@/app/data/api/get-user-photos'
 import { PhotosGrid } from '../photos/photos-grid'
@@ -20,6 +19,7 @@ export function UserList({ user }: UserListProps) {
   photos.forEach((item) => {
     map.set(item.id, item)
   })
+
   const filteredImages = Array.from(map.values())
 
   useEffect(() => {

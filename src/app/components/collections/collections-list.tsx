@@ -9,6 +9,12 @@ export function CollectionList() {
   const [collections, setCollections] = useState<Collection[]>([])
   const [page, setPage] = useState<number>(1)
   const [infinite, setInfinite] = useState(true)
+  const map = new Map()
+
+  collections.forEach((item) => {
+    map.set(item.id, item)
+  })
+  const filteredCollections = Array.from(map.values())
 
   useEffect(() => {
     async function call() {
@@ -64,7 +70,7 @@ export function CollectionList() {
         </Link>
       </p>
       <div className="grid grid-cols-1 gap-4  py-8 md:grid-cols-2 lg:grid-cols-3">
-        {collections.map((collection) => {
+        {filteredCollections.map((collection) => {
           return <CollectionCard key={collection.id} collection={collection} />
         })}
       </div>
