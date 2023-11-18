@@ -1,13 +1,15 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-import Link from 'next/link'
-import { Title } from '../shared/title'
 import { IPhoto } from '@/app/data/@types/photo'
 import { Photo } from '../photos/photo'
 import { getCollectionPhotos } from '@/app/data/api/get-collection-photos'
 
-export function CollectionPhotos({ collectionId }: any) {
+interface CollectionPhotosProps {
+  collectionId: string
+}
+
+export function CollectionPhotos({ collectionId }: CollectionPhotosProps) {
   const [photos, setPhotos] = useState<IPhoto[]>([])
   const [page, setPage] = useState<number>(1)
   const infinite = true
