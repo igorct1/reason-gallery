@@ -9,18 +9,12 @@ type Photo = {
 }
 
 export function Photo({ photo }: Photo) {
-  function hidePageOverflow() {
-    const document = window.document.documentElement
-    document.style.overflow = 'hidden'
-  }
-
   return (
     <div
       className="group relative flex flex-col overflow-hidden rounded-md"
       key={photo.urls.full}
     >
       <Link
-        onClick={hidePageOverflow}
         href={`/photos/${photo.id}`}
         className=" overflow-hidden rounded-md hover:cursor-zoom-in group-hover:brightness-[0.4]"
       >

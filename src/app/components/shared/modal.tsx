@@ -7,6 +7,14 @@ export default function Modal({ children }: { children: React.ReactNode }) {
   const wrapper = useRef(null)
   const router = useRouter()
 
+  useEffect(() => {
+    function hidePageOverflow() {
+      const document = window.document.documentElement
+      document.style.overflow = 'hidden'
+    }
+    hidePageOverflow()
+  }, [])
+
   const onDismiss = useCallback(() => {
     router.back()
     document.documentElement.style.overflow = 'auto'
